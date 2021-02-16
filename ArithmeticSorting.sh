@@ -1,4 +1,4 @@
-#! /bin/bash -x 
+#! /bin/bash -x
 declare -A dict
 declare -a array
 read -p "Enter 1st Number " a
@@ -19,6 +19,7 @@ do
 	array[$index]=${dict[$index]}
 done
 echo "Array values : "${array[@]}
+
 for (( i=1; i<=4; i++ ))
 do
 	for (( j=$((i+1)); j<=4; j++ ))
@@ -33,3 +34,16 @@ do
 done
 
 echo "Array In Descending Order : " ${array[@]}
+for (( i=1; i<=4; i++ ))
+do
+	for (( j=$((i+1)); j<=4; j++ ))
+	do
+		if [ $((array[$i])) -gt $((array[$j])) ]
+		then
+			min=$((array[$i]))
+			array[$i]=$((array[$j]))
+			array[$j]=$min
+		fi
+	done
+done
+echo "Array In Ascending Order : " ${array[@]}
