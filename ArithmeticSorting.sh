@@ -5,6 +5,8 @@ read -p "Enter 3rd Number " c
 result1=$(( a+b*c ))
 reuilt2=$(( a*b+c ))
 result3=$(( c+a/b ))
+result4=$(( a%b+c ))
 echo "a+b*c : " $result1
 echo "a*b+c : " $result2
 echo "c+a/b : " $result3
+echo "a%b+c : " $result4
