@@ -1,5 +1,6 @@
-#! /bin/bash -x 
+#! /bin/bash  
 declare -A dict
+declare -a array
 read -p "Enter 1st Number " a
 read -p "Enter 2nd Number " b
 read -p "Enter 3rd Number " c
@@ -12,4 +13,9 @@ echo "a+b*c : " $result1
 echo "a*b+c : " $result2
 echo "c+a/b : " $result3
 echo "a%b+c : " $result4
-echo ${dict[@]}
+echo "Dictionary value : " ${dict[@]}
+for (( index=1; index<=4; index++ ))
+do
+	array[$index]=${dict[$index]}
+done
+echo "Array values : "${array[@]}
